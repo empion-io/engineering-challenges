@@ -97,7 +97,7 @@ Validations:
 
 ## The Backend API
 
-## General requirements
+### General requirements
 
 - All timestamps should be stored in the DB in UTC (with timezone information).
 - All timestamps should be presented in responses in ISO8601 format.
@@ -113,19 +113,18 @@ Validations:
 - Framework: Ruby on Rails (API)
 - Language: Ruby
 
-## Extra mile
+### Extra mile
 
 - A dockerized solution would be very much appreciated.
 
-## Out of scope
+### Out of scope
 
 - Any form of authentication
 - Any form of data encryption
 
-
 ## The Web Client
 
-## Product requirements
+### Product requirements
 
 - It should be possible to create culture types
 - It should be possible to list culture types
@@ -146,9 +145,9 @@ Validations:
 - As an applicant, it should be possible to visualise my matches
 - As a company, it should be possible to visualise my matches
 
-## Business rules
+### Business rules
 
-### Computation of the culture test result
+#### Computation of the culture test result
 
 - Given a culture test is completed, then the result should be calculated by computing the average of all answer values for that test.
 - Given a completed culture test, when the result is computed, the culture type of the respondend should be updated to the culture type that includes the test result between the `lower_end` and `upper_end`.
