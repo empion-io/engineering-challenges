@@ -28,9 +28,9 @@ The decision of when to stop and consider your solution ready to deliver is up t
 ## Evaluation criteria
 
 - Completeness: Were all the requirements implemented? If not, the partial solution is coherent and functional?
-- Documentation: Is the project documented? Were we able to run the solution based on the give instructions?
+- Documentation: Is the project documented? Were we able to run the solution based on the given instructions?
 - Architecture: Is the solution overengineered? Were the architecture decisions justified in the documentation?
-- Quality: Is the solution properly tested. Were the most relevant parts covered by automated testing?
+- Quality: Is the solution properly tested? Were the most relevant parts covered by automated testing?
 - Code: Is the code easy to understand? Were complex decisions in the code justified in the documentation?
 
 ## The Domain Model
@@ -97,7 +97,7 @@ Validations:
 
 ## The Backend API
 
-### General requirements
+## General requirements
 
 - All timestamps should be stored in the DB in UTC (with timezone information).
 - All timestamps should be presented in responses in ISO8601 format.
@@ -113,18 +113,19 @@ Validations:
 - Framework: Ruby on Rails (API)
 - Language: Ruby
 
-### Extra mile
+## Extra mile
 
 - A dockerized solution would be very much appreciated.
 
-### Out of scope
+## Out of scope
 
 - Any form of authentication
 - Any form of data encryption
 
+
 ## The Web Client
 
-### Product requirements
+## Product requirements
 
 - It should be possible to create culture types
 - It should be possible to list culture types
@@ -145,16 +146,16 @@ Validations:
 - As an applicant, it should be possible to visualise my matches
 - As a company, it should be possible to visualise my matches
 
-### Business rules
+## Business rules
 
-#### Computation of the culture test result
+### Computation of the culture test result
 
 - Given a culture test is completed, then the result should be calculated by computing the average of all answer values for that test.
-- Given a completed culture test, when the result is computed, the culture type of the respondend should be updated to the culture type that includes the test result between the `lower_end` and `upper_end`.
+- Given a completed culture test, when the result is computed, the culture type of the respondent should be updated to the culture type that includes the test result between the `lower_end` and `upper_end`.
 
 ### General requirements
 
-- All timestamps should be presente in the user's timezone.
+- All timestamps should be present in the user's timezone.
 - Your solution should be properly tested (all tests should be passing).
 - Your solution should be properly documented (we should be able to run it based on your instructions without any issues).
 - Your solution should be linted (We recommend using Prettier for that).
