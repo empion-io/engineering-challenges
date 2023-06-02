@@ -37,7 +37,7 @@ The decision of when to stop and consider your solution ready to deliver is up t
 
 Here's an overview of the domain model of the application:
 
-![Domain Model][assets/domain-model.png]
+![Domain Model](./assets/domain-model.png)
 
 Note: Feel free to adapt the model in case you feel it can be improved.
 
