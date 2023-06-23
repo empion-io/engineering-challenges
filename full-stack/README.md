@@ -86,7 +86,7 @@ Note: Feel free to adapt the model in case you feel it can be improved.
 - Framework: Ruby on Rails (API)
 - Language: Ruby
 
-In case you are not familiar with Ruby on Rails, you can write the backend API in your language/framework of choice, as long as the general requirements as observed.
+In case you are not familiar with Ruby on Rails, you can write the backend API in your language/framework of choice, as long as the general requirements are observed.
 
 ## Extra mile (optional)
 
