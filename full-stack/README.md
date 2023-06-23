@@ -47,17 +47,6 @@ Note: Feel free to adapt the model in case you feel it can be improved.
 
 - id: integer
 - name: string, required
-- lower_end: integer, required
-- upper_end: integer, required
-
-Validation:
-
-- The `lower_end` and `upper_end` should not overlap between culture types.
-
-Validation example:
-
-- Culture Type A: `lower_end`=1, `upper_end`=10
-- Culture Type B: `lower_end`=9, `upper_end`=15 ==> Invalid! as 9 overlaps with the Culture Type A's `upper_end` value.
 
 **Applicant**
 
@@ -70,37 +59,19 @@ Validation example:
 
 - id: integer
 - name: string, required
-- city: string, required
 - culture_type: string (default: `undefined`, one of "culture_types")
 
-**Culture Test**
+**Match**
 
 - id: integer
-- type: string (one of "applicant", "company"), required
-- respondent_id: integer, "The ID of the respondent. Either applicant, or company, depending on the type of the test", required
-- answer_one: integer
-- answer_two: integer
-- answer_three: integer
-- answer_four: integer
-- answer_five: integer
-- answer_six: integer
-- answer_seven: integer
-- answer_eight: integer
-- result: integer
-- created_at: timestamp
-- completed_at: timestamp
-
-Validations:
-
-- answer value must be between 1 and 5 (inclusive)
-- the culture test cannot be completed until all answers are provided and the result is computed.
+- applicant_id: foreign key to Applicant
+- company_id: foreign key to Company
 
 ## The Backend API
 
 ## General requirements
 
-- All timestamps should be stored in the DB in UTC (with timezone information).
-- All timestamps should be presented in responses in ISO8601 format.
+- Timestamps, when presented, should be presented in in ISO8601 format.
 - API architecture: REST.
 - API documentation: OpenAPI.
 - Database: PostgreSQL.
@@ -110,10 +81,14 @@ Validations:
 
 ### Specific Requirements
 
+***Preferred:***
+
 - Framework: Ruby on Rails (API)
 - Language: Ruby
 
-## Extra mile
+In case you are not familiar with Ruby on Rails, you can write the backend API in your language/framework of choice, as long as the general requirements as observed.
+
+## Extra mile (optional)
 
 - A dockerized solution would be very much appreciated.
 
@@ -122,7 +97,6 @@ Validations:
 - Any form of authentication
 - Any form of data encryption
 
-
 ## The Web Client
 
 ## Product requirements
@@ -130,32 +104,24 @@ Validations:
 - It should be possible to create culture types
 - It should be possible to list culture types
 
-- It should be possible to create companies
-- It should be possible to create applicants
+- It should be possible to create companies and select a culture type.
+- It should be possible to create applicants and select a culture type.
 
 - It should be possible to visualise the list of companies
 - It should be possible to visualise the list of applicants
 
-- It should be possible to answer an applicant culture test
-- It should be possible to answer a company culture test
+- It should be possible to match applicants and companies
 
-- It should compute the culture test result when the test is completed
-- It should update the company culture type once the culture test is completed and the result is calculated
-- It should update the applicant culture type once the culture test is complete and the result is calculated
-
-- As an applicant, it should be possible to visualise my matches
-- As a company, it should be possible to visualise my matches
+- As a company, it should be possible to visualise the matched applicants
 
 ## Business rules
 
-### Computation of the culture test result
+### Computation of matches
 
-- Given a culture test is completed, then the result should be calculated by computing the average of all answer values for that test.
-- Given a completed culture test, when the result is computed, the culture type of the respondent should be updated to the culture type that includes the test result between the `lower_end` and `upper_end`.
-
+- Given I'm on the frontend application, when I click on "Start match", then applicants and companies with the same culture type are matched and included into the matches table.
+- Given I'm on the frontend application, when I access a company, then I should see the list of matches.
 ### General requirements
 
-- All timestamps should be present in the user's timezone.
 - Your solution should be properly tested (all tests should be passing).
 - Your solution should be properly documented (we should be able to run it based on your instructions without any issues).
 - Your solution should be linted (We recommend using Prettier for that).
