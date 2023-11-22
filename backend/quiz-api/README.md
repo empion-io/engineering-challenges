@@ -6,7 +6,7 @@ This project is Ruby on Rails 7 API only project with SQLite database and Ruby 3
 
 Here's what's already installed:
 - Byebug
-- RSpec
+- RSpec and Shoulda Matchers
 - Rubocop
 
 # Requirements
